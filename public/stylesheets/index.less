@@ -1,0 +1,177 @@
+@font-face {
+	font-family: 'QlikView Sans';
+	src: url(../../css/../fonts/qlikview-sans.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'QlikView Sans';
+	src: url(../../css/../fonts/qlikview-sans-bold.ttf) format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'QlikView Sans';
+	src: url(../../css/../fonts/qlikview-sans-italic.ttf) format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'QlikView Sans';
+	src: url(../../css/../fonts/qlikview-sans-bold-italic.ttf) format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'QlikView Icons';
+	src: url(../../css/../fonts/qlikview-icons.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+  background: #fff;
+  margin: 0;
+  font-family: 'QlikView Sans';
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: rgba(0, 0, 0, 0.2) 1px solid;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  padding-left: 20px;
+  
+  h1 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 0;
+    -webkit-font-smoothing: antialiased;
+  } 
+}
+
+#chartlist {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  padding: 20px;
+  height: 100%;
+  background-color: #f2f2f2;
+  
+  h2 {
+    flex: 1 1 100%;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #999;
+  }
+  
+  .charts {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    
+    .chart {
+      flex: 0 0 250px;
+      padding: 5px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transition: all .2s ease-in-out;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
+      
+      a {
+        text-decoration: none;
+        width: 100%;
+      }
+      
+      img {
+        max-width: 220px;
+        min-width: 220px;
+        height: auto;
+      }
+      
+    }
+    
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+h1 {
+  font-weight: 500px;
+}
+
+#chartlist {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+  h2 {
+    flex: 1 1 100%;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  .charts {
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+        
+    .chart {
+      flex: 0 0 200px;
+      max-width: 200px;
+      height: auto;
+      margin: 10px;
+      
+      img {
+        max-width: 200px;
+        height: auto; 
+      }      
+    }
+
+    
+  }
+  
+}*/

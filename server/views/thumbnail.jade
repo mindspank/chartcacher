@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/thumbnail.css')
+  link(rel='stylesheet', href='/stylesheets/object-renderer.css')
+  #object-container
+  script.
+    var data = !{JSON.stringify(data)}
+  script(data-main='/javascripts/init.js' src='/javascripts/require.js')

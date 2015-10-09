@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/index.css')
+  #header
+    h1 Qlik Sense Static Charts
+  #chartlist
+    each val, index in data
+      h2= index
+      .charts
+        each chart in val.charts
+          .chart
+            a(target= "_blank" href= "../" + chart.appId + '/' + chart.chartId )
+              img(src= "../data/thumbnails/" + chart.appId + '_' + chart.chartId + ".png")

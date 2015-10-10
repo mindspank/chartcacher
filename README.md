@@ -2,6 +2,9 @@
 This module will cache charts, render the chart as an image to allow static offline access to Qlik Sense charts.  
 The charts are non-interactive and not meant to replace the full Qlik Sense experience.
 
+### Prerequisites
+A Qlik Sense Server with internet connectivity.
+
 ### Installation
 Copy this directory into  
  `C:\Program Files\Qlik\Sense\ServiceDispatcher\Node`

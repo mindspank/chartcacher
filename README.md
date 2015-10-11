@@ -7,7 +7,7 @@ A Qlik Sense Server with internet connectivity.
 
 ### Installation
 Copy this directory into  
- `C:\Program Files\Qlik\Sense\ServiceDispatcher\Node`
+ `C:\Program Files\Qlik\Sense\ServiceDispatcher\Node\<chartcacher>`
 
 Next append the following block of text to the services.conf file located at  
 `C:\Program Files\Qlik\Sense\ServiceDispatcher\services.conf`

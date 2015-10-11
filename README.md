@@ -25,7 +25,7 @@ Script=Node\chartcacher\index.js
 ```
 
 Restart the Qlik Sense Service Dispatcher service.  
-Wait 5 seconds then browse to https://<qlik sense server name>:1337/ 
+Wait 5 seconds then browse to `https://<qlik sense server name>:1337/` 
 
 ### Usage
 Browsing to `https://<qlik sense server name>:1337/<app id>/<object id>` 

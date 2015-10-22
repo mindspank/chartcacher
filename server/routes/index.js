@@ -10,6 +10,8 @@ var transformData = require('./transformData')
 var thumbnail = require('./thumbnail')
 var readdirectory = require('./readdirectory')
 
+var SUPPORT_CHARTS = ['linechart', 'barchart', 'combochart', 'piechart', 'kpi', 'scatterplot', 'treemap']
+
 function nocache(req, res, next) {
   res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
   res.header('Expires', '-1');
@@ -25,7 +27,12 @@ function handleReq(req, res, next) {
   
   getChartProperties(appId, chartId).then(function(prop) {
     // Terminate the websocket connection.
-    prop[0].global.connection.ws.terminate()
+    prop[0].global.connection.ws.terminate();
+    prop[0].global = null;
+    
+    if (SUPPORT_CHARTS.indexOf(prop.visualization) === -1) {
+      return res.send('Object is not one of the support charts \n' + SUPPORT_CHARTS.join(' '))
+    }
     
     // Pad out the layout with snapshot related properties.
     var data = transformData(prop[1])
@@ -44,7 +51,8 @@ function handleReq(req, res, next) {
   })
   .catch(function(error) {
     next(error)
-  });
+  })
+  .done();
   
 }
 

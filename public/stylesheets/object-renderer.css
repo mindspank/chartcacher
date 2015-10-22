@@ -320,6 +320,7 @@ div.olMap {
 div.olMapViewport {
 	text-align: left;
 	-ms-touch-action: none;
+	touch-action: none;
 }
 
 div.olLayerDiv {

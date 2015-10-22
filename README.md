@@ -1,14 +1,14 @@
 ## The static chart cacher service
-This module will cache charts allowing you to embed static charts into third-party software such as Sharepoint and render the chart as an image to allow static offline access to Qlik Sense charts.  
+The chartcacher will allow you to cache charts locally on the server. Users can then access those charts without having to load the entire document into memory. The module will product a interactive, but static, chart and a image that can be embedded into third party systems.
+  
+As users are not authenticated and does not consume tokens there is no section access or security applied to the data so beware which charts you choose to cache.
 
-**The charts are non-interactive and not meant to replace the full Qlik Sense experience.**
 
-### Prerequisites
-A Qlik Sense Server with internet connectivity.
+**The charts are not connected to the associative QIX engine and not meant to replace the full Qlik Sense experience.**
 
 ### Installation
 Copy this directory into  
- `C:\Program Files\Qlik\Sense\ServiceDispatcher\Node\<chartcacher>`
+`C:\Program Files\Qlik\Sense\ServiceDispatcher\Node\<chartcacher>`
 
 Next append the following block of text to the services.conf file located at  
 `C:\Program Files\Qlik\Sense\ServiceDispatcher\services.conf`

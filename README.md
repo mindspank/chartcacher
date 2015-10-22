@@ -7,8 +7,9 @@ As users are not authenticated and does not consume tokens there is no section a
 **The charts are not connected to the associative QIX engine and not meant to replace the full Qlik Sense experience.**
 
 ### Installation
-Copy this directory into  
-`C:\Program Files\Qlik\Sense\ServiceDispatcher\Node\<chartcacher>`
+Download the module from https://github.com/mindspank/chartcacher/archive/master.zip
+Extract the zip file to your server, then run the copyfiles.bat file with Administrative Priviligies. Shift+Right Click the file, run as Administrator.  
+The copyfiles.bat file will copy the directory to the correct place and also prevents any issues that might occur if you copy the files manually through Explorer due to long file paths.  
 
 Next append the following block of text to the services.conf file located at  
 `C:\Program Files\Qlik\Sense\ServiceDispatcher\services.conf`

@@ -1,10 +1,10 @@
 function waitFor(testFx, onReady, timeOutMillis) {
-    var maxtimeOutMillis = timeOutMillis ? timeOutMillis : 5000, //< Default Max Timout is 3s
+    var maxtimeOutMillis = timeOutMillis ? timeOutMillis : 5000,
         start = new Date().getTime(),
         condition = false,
         interval = setInterval(function() {
             if ( (new Date().getTime() - start < maxtimeOutMillis) && !condition ) {
-                condition = (typeof(testFx) === "string" ? eval(testFx) : testFx()); //< defensive code
+                condition = (typeof(testFx) === "string" ? eval(testFx) : testFx());
             } else {
                 if(!condition) {
                     phantom.exit(1);
@@ -13,7 +13,7 @@ function waitFor(testFx, onReady, timeOutMillis) {
                     clearInterval(interval);
                 }
             }
-        }, 400);
+        }, 800);
 };
 
 var page = require('webpage').create();
@@ -29,7 +29,7 @@ page.open(args[1], function (status) {
     } else {
         waitFor(function() {
             return page.evaluate(function() {
-                return !!document.querySelector('canvas')
+                return !!document.querySelector('.qv-viz canvas')
             });
         }, function() {
             page.render(args[2] + '\\' + args[3] + '_' + args[4] + '.png');

@@ -7,15 +7,13 @@ function waitFor(testFx, onReady, timeOutMillis) {
                 condition = (typeof(testFx) === "string" ? eval(testFx) : testFx()); //< defensive code
             } else {
                 if(!condition) {
-                    console.log("'waitFor()' timeout");
                     phantom.exit(1);
                 } else {
-                    console.log("'waitFor()' finished in " + (new Date().getTime() - start) + "ms.");
                     typeof(onReady) === "string" ? eval(onReady) : onReady();
                     clearInterval(interval);
                 }
             }
-        }, 250);
+        }, 400);
 };
 
 var page = require('webpage').create();

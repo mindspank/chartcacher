@@ -1,6 +1,8 @@
 !function(r, document, global) {
 	
-	r.config({ baseUrl: 'https://charts.qlikcloud.com/resources/0.8'});
+	r.config({ 
+		baseUrl: location.protocol + '//' + location.host
+	});
 	
 	r(["assets/object-renderer/object-renderer"], function(renderer) {
 		

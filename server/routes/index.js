@@ -29,9 +29,9 @@ function handleReq(req, res, next) {
     // Terminate the websocket connection.
     prop[0].global.connection.ws.terminate();
     prop[0].global = null;
-    
-    if (SUPPORT_CHARTS.indexOf(prop.visualization) === -1) {
-      return res.send('Object is not one of the support charts \n' + SUPPORT_CHARTS.join(' '))
+        
+    if (SUPPORT_CHARTS.indexOf(prop[1].visualization) === -1) {
+      return res.send('Object is not one of the supported charts: ' + SUPPORT_CHARTS.join(', '))
     }
     
     // Pad out the layout with snapshot related properties.

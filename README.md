@@ -34,7 +34,7 @@ Wait 5 seconds then browse to `https://<qlik sense server name>:1337/`
 
 ### Usage
 Browsing to `https://<qlik sense server name>:1337/<app id>/<object id>` 
-will automatically cache the chart locally and produce a image of the chart.
+will automatically cache the chart locally and produce an image of the chart.
 You can now link/embed this chart into your portals/intranets.
   
 If you wish to refresh the cached chart simply append `/nocache` to the end of the URL.  

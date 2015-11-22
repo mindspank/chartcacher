@@ -18,7 +18,6 @@ var transformData = function(data) {
 	data.chartId = data.qInfo.qId
 	
 	delete data.qInfo
-	
 	return data;
 
 };

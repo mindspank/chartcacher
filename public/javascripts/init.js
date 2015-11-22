@@ -15,7 +15,9 @@
 				interactive: true
 			};
 						
-			renderer.renderSnapshot(settings).then(null, console.log);
+			renderer.renderSnapshot(settings).catch(function(error) {
+				console.log(error);
+			});
 		};
 	
 		renderer.init({ language: 'en-US' }).then(inject, console.log)

@@ -31,16 +31,31 @@ var getChartProperties = function(appId, chartId) {
 			return connections.app.getObject(chartId)
 		})
 		.then(function(chart) {
-			return chart.getLayout()
+			return connections.chart = chart;
 		})
-	    .then(function(layout) {
-			return connections.app.getAppProperties().then(function(props) {
-				layout.appTitle = props.qTitle
-				return layout
-			})
+		.then(function(chart) {
+			return connections.chart.getProperties()
+		})
+	    .then(function(props) {
+			if(props.visualization === 'map' && props.layers[0].type === 'polygon') {
+				return connections.chart.getLayout().then(function(layout) {
+					return connections.chart.getHyperCubeData('/layers/0/geodata/qHyperCubeDef',props.layers[0].qHyperCubeDef.qInitialDataFetch).then(function(data) {
+						layout.layers[0].geodata.qHyperCube.qDataPages = data;
+						return layout;
+					})	
+				})
+			} else {
+				return connections.chart.getLayout();
+			}
 		})
 		.then(function(layout) {
-			return [connections, layout]
+			return connections.app.getAppProperties().then(function(props) {
+				layout.appTitle = props.qTitle
+				return layout;
+			})	
+		})
+		.then(function(layout) {
+			return [connections, layout];
 		})
 	
 };

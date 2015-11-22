@@ -10,7 +10,7 @@ var transformData = require('./transformData')
 var thumbnail = require('./thumbnail')
 var readdirectory = require('./readdirectory')
 
-var SUPPORT_CHARTS = ['linechart', 'barchart', 'combochart', 'piechart', 'kpi', 'scatterplot', 'treemap']
+var SUPPORT_CHARTS = ['linechart', 'barchart', 'combochart', 'piechart', 'kpi', 'scatterplot', 'treemap', 'map']
 
 function nocache(req, res, next) {
   res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
@@ -24,12 +24,12 @@ function handleReq(req, res, next) {
   var appId = req.params.app
   var chartId = req.params.chart
   var filename = appId + '_' + chartId + '.json'
-  
+
   getChartProperties(appId, chartId).then(function(prop) {
     // Terminate the websocket connection.
     prop[0].global.connection.ws.terminate();
     prop[0].global = null;
-        
+
     if (SUPPORT_CHARTS.indexOf(prop[1].visualization) === -1) {
       return res.send('Object is not one of the supported charts: ' + SUPPORT_CHARTS.join(', '))
     }
@@ -37,14 +37,13 @@ function handleReq(req, res, next) {
     // Pad out the layout with snapshot related properties.
     var data = transformData(prop[1])
     data.appId = appId
-
     // Render template with the chart data
     res.render('chart', { data: data }, function(err, html) {
       res.send(html)        
     })
-
+    
     // Cache chart to disk
-    fs.writeJson(path.join(config.chartCachePath, filename), prop[1], function() {
+    fs.writeJson(path.join(config.chartCachePath, filename), data, function() {
       thumbnail(appId, chartId)
     });
     
@@ -86,7 +85,7 @@ router.get('/thumbnail/:app/:chart', nocache, function(req, res) {
     var appId = req.params.app
     var chartId = req.params.chart
     var filename = appId + '_' + chartId + '.json'
-   
+
     fs.readJson(path.join(config.chartCachePath, filename), function(err, obj) {
       res.render('thumbnail', { data: obj })
     })

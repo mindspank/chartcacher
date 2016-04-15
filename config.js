@@ -30,7 +30,8 @@ var config = extend(true, {
 	thumbnailSize: {
 		width: 800,
 		height: 600
-	}
+	},
+	cachedefinitions: true
 	
 });
 

@@ -1,7 +1,7 @@
 !function(r, document, global) {
 	
 	r.config({ 
-		baseUrl: location.protocol + '//' + location.host
+		baseUrl: location.protocol + '//' + location.host + ':' + location.port
 	});
 	
 	r(["assets/object-renderer/object-renderer"], function(renderer) {

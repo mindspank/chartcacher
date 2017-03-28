@@ -13,7 +13,7 @@ var publicPath = path.join(__dirname, 'public/')
 
 var config = extend(true, {
 	
-	useHttps: false,
+	useHttps: true,
 	port: 1337,
 	enginePort: 4747,
 	hostfile: 'C:/ProgramData/Qlik/Sense/Host.cfg',

@@ -29,7 +29,7 @@ page.open(args[1], function (status) {
     } else {
         waitFor(function() {
             return page.evaluate(function() {
-                return !!document.querySelector('.qv-viz canvas')
+                return !!document.querySelector('.qv-viz')
             });
         }, function() {
             page.render(args[2] + '\\' + args[3] + '_' + args[4] + '.png');

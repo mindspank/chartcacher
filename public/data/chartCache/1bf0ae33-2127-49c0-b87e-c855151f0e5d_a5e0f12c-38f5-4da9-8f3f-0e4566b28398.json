@@ -1,0 +1,336 @@
+{
+  "qSelectionInfo": {},
+  "qHyperCube": {
+    "qSize": {
+      "qcx": 2,
+      "qcy": 7
+    },
+    "qDimensionInfo": [
+      {
+        "qFallbackTitle": "Case Owner Group",
+        "qApprMaxGlyphCount": 19,
+        "qCardinal": 6,
+        "qSortIndicator": "A",
+        "qGroupFallbackTitles": [
+          "Case Owner Group"
+        ],
+        "qGroupPos": 0,
+        "qStateCounts": {
+          "qLocked": 0,
+          "qSelected": 0,
+          "qOption": 6,
+          "qDeselected": 0,
+          "qAlternative": 0,
+          "qExcluded": 0,
+          "qSelectedExcluded": 0,
+          "qLockedExcluded": 0
+        },
+        "qTags": [
+          "$ascii",
+          "$text"
+        ],
+        "qDimensionType": "D",
+        "qGrouping": "N",
+        "qNumFormat": {
+          "qType": "U",
+          "qnDec": 0,
+          "qUseThou": 0
+        },
+        "qIsAutoFormat": true,
+        "qGroupFieldDefs": [
+          "Case Owner Group"
+        ],
+        "qMin": "NaN",
+        "qMax": "NaN",
+        "qAttrExprInfo": [],
+        "qAttrDimInfo": [],
+        "autoSort": true,
+        "cId": "cqyQv",
+        "othersLabel": "Others"
+      }
+    ],
+    "qMeasureInfo": [
+      {
+        "qFallbackTitle": "Avg Case Duration",
+        "qApprMaxGlyphCount": 9,
+        "qCardinal": 0,
+        "qSortIndicator": "D",
+        "qNumFormat": {
+          "qType": "R",
+          "qnDec": 0,
+          "qUseThou": 0,
+          "qFmt": "########",
+          "qDec": ".",
+          "qThou": ","
+        },
+        "qMin": 9.025133371016397,
+        "qMax": 41.422700513013275,
+        "qIsAutoFormat": true,
+        "qAttrExprInfo": [
+          {
+            "qMin": 4280774183,
+            "qMax": 4294954754,
+            "qFallbackTitle": "If(firstsortedvalue( Priority, -Aggr(Count({<[Cases Open/Closed]={'Open Cases'}>}Distinct [%CaseId] ),[Case Owner Group],Priority))='Low', rgb(39,110,39),  If(firstsortedvalue( Priority, -Aggr(Count({<[Cases Open/Closed]={'Open Cases'}>}Distinct [%CaseId] ),[Case Owner Group],Priority))='Medium', rgb(255,207,2),  If(firstsortedvalue( Priority, -Aggr(Count({<[Cases Open/Closed]={'Open Cases'}>}Distinct [%CaseId] ),[Case Owner Group],Priority))='High', rgb(249,63,23))))",
+            "id": "colorByExpression"
+          }
+        ],
+        "qAttrDimInfo": [],
+        "autoSort": true,
+        "cId": "QqmmEBg"
+      }
+    ],
+    "qEffectiveInterColumnSortOrder": [
+      1,
+      0
+    ],
+    "qGrandTotalRow": [
+      {
+        "qText": "14.939489",
+        "qNum": 14.93948925602377,
+        "qElemNumber": -1,
+        "qState": "X",
+        "qIsTotalCell": true
+      }
+    ],
+    "qDataPages": [
+      {
+        "qMatrix": [
+          [
+            {
+              "qText": "Systems Development",
+              "qNum": "NaN",
+              "qElemNumber": 5,
+              "qState": "O"
+            },
+            {
+              "qText": "41.422701",
+              "qNum": 41.422700513013275,
+              "qElemNumber": 0,
+              "qState": "L",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": 4280774183
+                  }
+                ]
+              }
+            }
+          ],
+          [
+            {
+              "qText": "Operations",
+              "qNum": "NaN",
+              "qElemNumber": 3,
+              "qState": "O"
+            },
+            {
+              "qText": "36.70164",
+              "qNum": 36.701640223709305,
+              "qElemNumber": 0,
+              "qState": "L",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": 4294954754
+                  }
+                ]
+              }
+            }
+          ],
+          [
+            {
+              "qText": "Web Infrastructure",
+              "qNum": "NaN",
+              "qElemNumber": 2,
+              "qState": "O"
+            },
+            {
+              "qText": "21.181133",
+              "qNum": 21.181132775403842,
+              "qElemNumber": 0,
+              "qState": "L",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            }
+          ],
+          [
+            {
+              "qText": "IT Infrastructure",
+              "qNum": "NaN",
+              "qElemNumber": 1,
+              "qState": "O"
+            },
+            {
+              "qText": "16.538744",
+              "qNum": 16.538743997717155,
+              "qElemNumber": 0,
+              "qState": "L",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": 4280774183
+                  }
+                ]
+              }
+            }
+          ],
+          [
+            {
+              "qText": "-",
+              "qNum": "NaN",
+              "qElemNumber": -2,
+              "qState": "L",
+              "qIsNull": true
+            },
+            {
+              "qText": "14.000852",
+              "qNum": 14.000851747305383,
+              "qElemNumber": 0,
+              "qState": "L",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": 4294524695
+                  }
+                ]
+              }
+            }
+          ],
+          [
+            {
+              "qText": "Systems",
+              "qNum": "NaN",
+              "qElemNumber": 0,
+              "qState": "O"
+            },
+            {
+              "qText": "11.366166",
+              "qNum": 11.366165516367278,
+              "qElemNumber": 0,
+              "qState": "L",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": 4294954754
+                  }
+                ]
+              }
+            }
+          ],
+          [
+            {
+              "qText": "Non-IT/Systems",
+              "qNum": "NaN",
+              "qElemNumber": 4,
+              "qState": "O"
+            },
+            {
+              "qText": "9.0251334",
+              "qNum": 9.025133371016397,
+              "qElemNumber": 0,
+              "qState": "L",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": 4280774183
+                  }
+                ]
+              }
+            }
+          ]
+        ],
+        "qTails": [
+          {
+            "qUp": 0,
+            "qDown": 0
+          }
+        ],
+        "qArea": {
+          "qLeft": 0,
+          "qTop": 0,
+          "qWidth": 2,
+          "qHeight": 7
+        }
+      }
+    ],
+    "qPivotDataPages": [],
+    "qStackedDataPages": [],
+    "qMode": "S",
+    "qNoOfLeftDims": -1
+  },
+  "refLine": {
+    "refLines": []
+  },
+  "showTitles": true,
+  "title": "Avg Case Resolution Time (Days)",
+  "subtitle": "* color represents the priority with the most open cases",
+  "footnote": "",
+  "barGrouping": {
+    "grouping": "grouped",
+    "showAs": "percentage"
+  },
+  "orientation": "horizontal",
+  "gridLine": {
+    "auto": true,
+    "spacing": 2
+  },
+  "dataPoint": {
+    "showLabels": true
+  },
+  "cutAxis": true,
+  "color": {
+    "auto": false,
+    "mode": "byExpression",
+    "singleColor": 3,
+    "persistent": false,
+    "measureScheme": "sg",
+    "reverseScheme": false,
+    "dimensionScheme": "12",
+    "dimensionId": "",
+    "colorExpression": "If(firstsortedvalue( Priority, -Aggr(Count({<[Cases Open/Closed]={'Open Cases'}>}Distinct [%CaseId] ),[Case Owner Group],Priority))='Low', rgb(39,110,39),  If(firstsortedvalue( Priority, -Aggr(Count({<[Cases Open/Closed]={'Open Cases'}>}Distinct [%CaseId] ),[Case Owner Group],Priority))='Medium', rgb(255,207,2),  If(firstsortedvalue( Priority, -Aggr(Count({<[Cases Open/Closed]={'Open Cases'}>}Distinct [%CaseId] ),[Case Owner Group],Priority))='High', rgb(249,63,23))))"
+  },
+  "legend": {
+    "show": false,
+    "dock": "auto",
+    "showTitle": true
+  },
+  "dimensionAxis": {
+    "show": "labels",
+    "label": "auto",
+    "dock": "near"
+  },
+  "measureAxis": {
+    "show": "none",
+    "label": "horizontal",
+    "dock": "near",
+    "spacing": 0.75,
+    "autoMinMax": true,
+    "minMax": "min",
+    "min": 0,
+    "max": 10
+  },
+  "visualization": "barchart",
+  "appTitle": "Helpdesk Management",
+  "snapshotData": {
+    "content": {
+      "chartData": {
+        "legendScrollOffset": 0,
+        "scrollOffset": 0,
+        "discreteSpacing": 0,
+        "axisInnerOffset": 0,
+        "rotation": 0
+      }
+    },
+    "object": {
+      "size": {}
+    }
+  },
+  "timestamp": 1490642785109,
+  "chartId": "a5e0f12c-38f5-4da9-8f3f-0e4566b28398",
+  "appId": "1bf0ae33-2127-49c0-b87e-c855151f0e5d"
+}

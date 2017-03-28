@@ -15,48 +15,36 @@ var getChartProperties = function(appId, chartId) {
 		cert: config.certificates.client,
 		rejectUnauthorized: false
 	}
-		
-	var connections = {}
-	return qsocks.Connect(engineconfig)
-		.then(function(global) {
-			return connections.global = global
+	var connect = qsocks.ConnectOpenApp(engineconfig);
+
+	return connect.then(function(connections) {
+		return connections[1].getObject(chartId)
+	})
+	.then(function(chart) {
+		return chart.getProperties().then(function(props) {
+			return { chart: chart, props: props }
 		})
-		.then(function() {
-			return connections.global.openDoc(appId)
-		})
-		.then(function(app) {
-			return connections.app = app
-		})
-		.then(function() {
-			return connections.app.getObject(chartId)
-		})
-		.then(function(chart) {
-			return connections.chart = chart;
-		})
-		.then(function(chart) {
-			return connections.chart.getProperties()
-		})
-	    .then(function(props) {
-			if(props.visualization === 'map' && props.layers[0].type === 'polygon') {
-				return connections.chart.getLayout().then(function(layout) {
-					return connections.chart.getHyperCubeData('/layers/0/geodata/qHyperCubeDef',props.layers[0].qHyperCubeDef.qInitialDataFetch).then(function(data) {
-						layout.layers[0].geodata.qHyperCube.qDataPages = data;
-						return layout;
-					})	
-				})
-			} else {
-				return connections.chart.getLayout();
-			}
-		})
-		.then(function(layout) {
-			return connections.app.getAppProperties().then(function(props) {
+	})
+	.then(function(obj) {
+		if(obj.props.visualization === 'map' && obj.props.layers[0].type === 'polygon') {
+			return obj.chart.getLayout().then(function(layout) {
+				return obj.chart.getHyperCubeData('/layers/0/geodata/qHyperCubeDef',props.layers[0].qHyperCubeDef.qInitialDataFetch).then(function(data) {
+					layout.layers[0].geodata.qHyperCube.qDataPages = data;
+					return layout;
+				})	
+			})
+		} else {
+			return obj.chart.getLayout();
+		}
+	})
+	.then(function(layout) {
+		return connect.then(function(connections) {
+			return connections[1].getAppProperties().then(function(props) {
 				layout.appTitle = props.qTitle
-				return layout;
-			})	
+				return [connections, layout];
+			})		
 		})
-		.then(function(layout) {
-			return [connections, layout];
-		})
+	})
 	
 };
 

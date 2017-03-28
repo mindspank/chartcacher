@@ -18,7 +18,12 @@ module.exports = {
 			app.set('view engine', 'jade')
 			app.use(require('less-middleware')( config.publicPath ))
 			app.use(express.static( config.publicPath ))
+
+			app.use('/resources/assets/object-renderer/object-renderer.js', function(req, res) {
+				console.log('request require')
+			})
 			app.use('/resources', express.static(config.clientPath) )
+			app.use('/fonts', express.static(path.resolve(config.clientPath, 'fonts')) )
 			app.use('/', require('./routes/index') )
 
 			// catch 404 and forward to error handler

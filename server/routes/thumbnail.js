@@ -21,7 +21,7 @@ function thumbnail(app, chart) {
 
   fs.remove(path.join(config.thumbnailsPath, app + '_' + chart + '.png'), function() {
     exec(execpath, function(err) {
-      if(err) return console.log(err);
+      if(err) return console.log('PhantomJS:', err);
     })    
   })
 

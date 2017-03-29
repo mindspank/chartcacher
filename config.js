@@ -39,7 +39,7 @@ var config = extend(true, {
 	 * IF RUNNING LOWER VERSION THEN 3.0 OF QLIK SENSE
 	 * SET TOGGLE TO TRUE
 	 */
-	pre30: true
+	pre30: false
 	
 });
 

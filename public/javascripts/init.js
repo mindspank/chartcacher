@@ -1,7 +1,7 @@
 !function(r, document, global) {
-	
+
 	r.config({ 
-		baseUrl: 'https://usrad-aklprobook:1337/resources/'
+		baseUrl: global.location.protocol + '//' + global.location.host + '/resources/'
 	});
 	
 	r(["assets/object-renderer/object-renderer"], function(renderer) {

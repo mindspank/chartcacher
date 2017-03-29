@@ -1,6 +1,6 @@
 {
   "name": "chartcacher",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "This module will cache charts and render the chart as an image to allow static offline access to Qlik Sense charts.  \r The chart definitions are fetched from the QIX engine and cached allowing non-Qlik licensed users to access Qlik charts without consuming a token.",
   "main": "index.js",
   "dependencies": {

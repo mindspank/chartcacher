@@ -10,5 +10,5 @@ html
     #footer
       span This chart was last updated #{new Date(data.timestamp).toGMTString()}
     script.
-      var data = !{JSON.stringify(data)}
+      var data = !{JSON.stringify(data)};
     script(data-main='/javascripts/init.js' src='/resources/assets/external/requirejs/require.js')

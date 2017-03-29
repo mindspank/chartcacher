@@ -36,10 +36,10 @@ var config = extend(true, {
 	},
 	cachedefinitions: true,
 	/**
-	 * IF RUNNING LOWER VERSION THEN 3.2 OF QLIK SENSE
+	 * IF RUNNING LOWER VERSION THEN 3.0 OF QLIK SENSE
 	 * SET TOGGLE TO TRUE
 	 */
-	pre32: false
+	pre30: true
 	
 });
 

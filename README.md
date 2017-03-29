@@ -52,3 +52,8 @@ Clean out the chartCache and thumbnails folder if you wish to reset the service.
 ### Configuration
 If your installation has been modified from out-the-box Sense folders then please change the config.js file accordingly.  
 You can also tweak the thumbnail sizes if you want smaller/larger images.
+  
+If installing on a seperate machine then from the Qlik Sense server make sure you copy the client files to a location locally and change the clientPath on the config file to match the new location of the client files.
+
+#### Running a pre 3.0 version of Qlik Sense?
+Make sure you toggle the pre30 config property to properly use the included files instead of relying on the Qlik Sense client.

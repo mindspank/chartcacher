@@ -83,7 +83,7 @@ router.get('/', function (req, res, next) {
 
     }, {})
 
-    res.render('index', { data: data })
+    res.render('index', {  data: data })
 
   })
 });
@@ -97,7 +97,7 @@ router.get('/thumbnail/:app/:chart', nocache, function (req, res) {
   // In-memory cache is turned off.
   if (!config.cachedefinitions) {
     fs.readJson(path.join(config.chartCachePath, filename), function (err, obj) {
-      res.render('thumbnail', { data: obj })
+      res.render('thumbnail', { data: obj})
     });
   };
   
